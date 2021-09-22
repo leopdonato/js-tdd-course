@@ -6,8 +6,8 @@
   "scripts": {
     "lint": "npx eslint src/*.js",
     "prepush": "npm run lint",
-    "test": "./node_modules/.bin/mocha tests/**/*.spec.js",
-    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --watch"
+    "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
+    "test:tdd": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register --watch"
   },
   "repository": {
     "type": "git",
@@ -25,9 +25,14 @@
   },
   "homepage": "https://github.com/leopdonato/js-tdd-course#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
     "chai": "^4.3.4",
     "eslint": "^7.29.0",
     "husky": "^6.0.0",
     "mocha": "^9.1.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.15.5"
   }
 }
